@@ -1,0 +1,1 @@
+{"version":3,"file":"camper.js","sourceRoot":"","sources":["camper.ts"],"names":[],"mappings":"","sourcesContent":["export interface ICamper {\r\n    username: string,\r\n    img: string,\r\n    alltime: number,\r\n    recent: number,\r\n    lastUpdate: string\r\n}"]}

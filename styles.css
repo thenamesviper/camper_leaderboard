@@ -1,0 +1,42 @@
+body {
+  background-color: #ddd; }
+
+/*LOADING CSS */
+#circles {
+  overflow: hidden;
+  height: 50px;
+  display: flex;
+  align-items: center; }
+
+#circles > div {
+  float: left;
+  margin-left: 5px;
+  border-radius: 100%;
+  animation-duration: 1.2s;
+  animation-name: circlePulse;
+  animation-iteration-count: infinite; }
+
+.verysmall-loading {
+  height: 10px;
+  width: 10px;
+  animation-delay: .9s; }
+
+.small-loading {
+  height: 20px;
+  width: 20px;
+  animation-delay: .6s; }
+
+.medium-loading {
+  height: 30px;
+  width: 30px;
+  animation-delay: .3s; }
+
+.big-loading {
+  height: 40px;
+  width: 40px; }
+
+@keyframes circlePulse {
+  10% {
+    background-color: blue; } }
+
+/* END LOADING CSS*/

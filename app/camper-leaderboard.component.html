@@ -1,0 +1,55 @@
+<div id = "header">freeCodeCamp Camper Leaderboard</div>
+
+<table id ="leaderboard">
+
+  <thead>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th colspan = "2">Points</th>
+      </tr>
+       <tr>
+        <th>Rank</th>
+        <th>Camper</th>
+        <th>last update</th>
+        <th (click)="get30()" [class.selected] = "thirty_selected"><p id = "last30" >Last 30 Days</p></th>
+        <th (click)="getOverall()" [class.selected] = "!thirty_selected"><p id = "overall" >Overall</p></th>
+      </tr>
+  </thead>
+
+<div id = "circles" *ngIf = "!errorMessage && !last30Campers">
+      <div class = "verysmall-loading"></div>
+      <div class = "small-loading"></div>
+      <div class = "medium-loading"></div>
+      <div class = "big-loading"></div>
+      <div class = "medium-loading"></div>
+      <div class = "small-loading"></div>
+      <div class = "verysmall-loading"></div>
+</div>
+
+  <tbody *ngIf = "thirty_selected && last30Campers">
+      <tr *ngFor = "let camper of last30Campers, let i = index">  
+        <td>{{ i+1 }}</td>
+        <a href = "https://www.freecodecamp.com/{{camper.username}}"><td><img src = {{camper.img}} >{{  camper.username}}</td></a>
+        <td>{{ camper.lastUpdate | gooddate }}</td>
+        <td>{{ camper.recent }}</td>
+        <td>{{ camper. alltime }}</td>
+      </tr>
+  </tbody>
+  <tbody *ngIf = "!thirty_selected">
+      <tr *ngFor = "let camper of allTimeCampers, let i = index">
+        <td>{{ i+1 }}</td>
+        <a href = "https://www.freecodecamp.com/{{camper.username}}"><td><img src = {{camper.img}} >{{  camper.username}}</td></a>
+        <td>{{ camper.lastUpdate | gooddate }}</td>
+        <td>{{ camper.recent }}</td>
+        <td>{{ camper. alltime }}</td>
+      </tr>
+  </tbody>
+</table>
+
+<div id = "error" *ngIf = "errorMessage">{{errorMessage}}</div>
+
+<a href = "http://codepen.io/thenamesviper/full/grWNeJ/"><div id = "portfolio">Other Work</div></a>
+<div id = "about">Made for freeCodeCamp. See source <a href = "https://github.com/thenamesviper/camper_leaderboard">here</a></div>
+
