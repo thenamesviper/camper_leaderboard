@@ -18,6 +18,16 @@
       </tr>
   </thead>
 
+<div id = "circles" *ngIf = "!errorMessage && !last30Campers">
+      <div class = "verysmall-loading"></div>
+      <div class = "small-loading"></div>
+      <div class = "medium-loading"></div>
+      <div class = "big-loading"></div>
+      <div class = "medium-loading"></div>
+      <div class = "small-loading"></div>
+      <div class = "verysmall-loading"></div>
+</div>
+
   <tbody *ngIf = "thirty_selected && last30Campers">
       <tr *ngFor = "let camper of last30Campers, let i = index">  
         <td>{{ i+1 }}</td>
@@ -41,5 +51,5 @@
 <div id = "error" *ngIf = "errorMessage">{{errorMessage}}</div>
 
 <a href = "http://codepen.io/thenamesviper/full/grWNeJ/"><div id = "portfolio">Other Work</div></a>
-<div id = "about">About</div>
+<div id = "about">Made for freeCodeCamp. See source <a href = "https://github.com/thenamesviper/camper_leaderboard">here</a></div>
 
