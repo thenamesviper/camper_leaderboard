@@ -15,8 +15,5 @@ describe('App: CAMPERLEADERBOARD', () => {
     expect(app).toBeTruthy();
   }));
 
-  it('should have as title \'camper-leaderboard works!\'',
-      inject([CAMPERLEADERBOARDAppComponent], (app: CAMPERLEADERBOARDAppComponent) => {
-    expect(app.title).toEqual('camper-leaderboard works!');
-  }));
+  
 });
